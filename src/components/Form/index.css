@@ -1,0 +1,518 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+html,
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+label{
+  color: 
+  #040607
+  ;
+  font-weight: 500;
+}
+
+.img-container{
+  display: flex;
+  width: 100%;
+  align-items: left;
+  justify-self: left;
+  justify-content: left;
+  margin-bottom: 20px;
+  background-color: white;
+  padding: 10px;
+  padding-left: 10%;
+}
+
+.image {
+  width: 220px;
+  align-self: left;
+}
+
+.focus:focus {
+  outline: 0.1em solid rgb(0, 0, 0);
+  outline-offset: -0.1em;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #5bb7e6; */
+  background-image: url("https://images.ctfassets.net/co0pvta7hzrh/1HOajBVHsh7xunfUnjpDNE/c94d271e8f90a6bf6016fc1d275d7a74/e_commerce_registration_form_template_thumb.png");
+  min-height: 100vh;
+  background-size: cover;
+  
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 40px;
+  margin: 20px;
+  width: 80%;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+   rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.form-details{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: center;
+}
+.number-container {
+    margin: 5px;
+    
+}
+
+.input-number {
+  width: 50%;
+  height: 35px;
+  border-radius: 4px;
+  margin-top: 5px;
+  padding-left: 15px;
+  border: solid 1.5px rgba(128, 128, 128, 0.719) ;
+
+}
+.input-number:focus {
+  outline: 0.01em solid rgb(0, 0, 0);
+  outline-offset: -0.1em;
+}
+.name-container,
+.place-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+  
+.first-name-container,
+.last-name-container,
+.village-container,
+.mandal-container {
+  margin: 5px;
+} 
+.last-name-container,
+.mandal-container {
+ margin-left: 3%;
+} 
+.firstname-input,
+.secondname-input,
+.village-input,
+.mandal-input{
+  width: 250px;
+  max-width: 300px;
+  height: 32px;
+  border-radius: 4px;
+  margin-top: 5px;
+  padding-left: 15px;
+  border: solid 1.5px rgba(128, 128, 128, 0.719) ;
+  border: solid 1.5px rgba(128, 128, 128, 0.719) ;
+  
+}
+.village-input,
+.mandal-input,
+.secondname-input{
+  width: 250px;
+  max-width: 300px;
+}
+.crop-acres-container {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+  justify-content: space-between;
+  align-items: space-between;
+}
+.crop-acres-container-2 {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+  justify-content: space-between;
+  align-items: space-between;
+}
+
+.input-field{
+  margin-right: 5px;
+}
+.acres {
+  margin-left: 20px;
+}
+.crop-input {
+  width: 180%;
+  height: 32px;
+  border-radius: 4px;
+  margin-top: 5px;
+  padding-left: 15px;
+  border: solid 1.5px rgba(128, 128, 128, 0.719) ;
+}
+.acres-input {
+  width: 90%;
+  height: 32px;
+  border-radius: 4px;
+  margin-top: 5px;
+  padding-left: 15px;
+  border: solid 1.5px rgba(128, 128, 128, 0.719) ;
+}
+
+.date-container {
+  display: flex;
+  margin: 5px;
+}
+.date-input {
+  width: 100%;
+  height: 32px;
+  border-radius: 4px;
+  margin-top: 5px;
+  padding: 5px;
+  border: solid 1.5px rgba(128, 128, 128, 0.719) ;
+}
+
+.manure-container {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+}
+.drip-input  {
+  width: 50%;
+  height: 32px;
+  border-radius: 4px;
+  margin-top: 5px;
+  border: solid 1.5px rgba(128, 128, 128, 0.719) ;
+}
+.crop-condition-container {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+  margin-top: 17px;
+  
+}
+.age-crop-container {
+  margin-left: 30%;
+  margin-top: 0;
+  
+}
+.drip-input-container {
+   margin-left: 30%;
+   
+}
+.crop-acres-main-container {
+  display: flex;
+  flex-direction: row;
+ 
+}
+.spray-container-1 {
+  margin-left: 7%;
+}
+.crop-main-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+}
+.manure-crop-main-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  align-items: center;
+}
+.agecrop-input {
+  width: 50%;
+  height: 32px;
+  border-radius: 4px;
+  margin-top: 5px;
+  border: solid 1.5px rgba(128, 128, 128, 0.719) ;
+}
+.spray-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5px;
+}
+.spray-input {
+  width: 100%;
+  height: 32px;
+  border-radius: 4px;
+  margin-top: 5px;
+  padding: 5px;
+  border: solid 1.5px rgba(128, 128, 128, 0.719) ;
+  padding-left: 15px;
+}
+.remarks-container {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+  width: 100%;
+}
+.remarks-input {
+  width: 600px;
+  max-width: 100%;
+  height: 45px;
+  border-radius: 4px;
+  margin-top: 5px;
+  padding: 5px;
+  border: solid 1.5px rgba(128, 128, 128, 0.719) ;
+  padding-left: 15px;
+}
+.file-container {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+} 
+.file-input {
+  width: max-content;
+  height: max-content;
+  border-radius: 5px;
+  margin-top: 5px;
+  padding: 5px;
+  border: solid 1.5px rgba(128, 128, 128, 0.719) ;
+}
+.button-container {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+  margin-top: 20px;
+}
+.btn {
+   background-color:  #5bb7e6;
+   width: 100px;
+   height: 35px;
+   border: none;
+   border-radius: 5px;
+   color: white;
+   font-weight: bold;
+   letter-spacing: 1px;
+   cursor: pointer;
+}
+  
+.red {
+  border: 2px solid rgba(255, 0, 0, 0.555);
+}
+
+@media only screen and (max-width: 750px)  {
+    .main-container {
+    padding: 20px;
+    margin: 30px;
+    width: 90%;
+      }
+      .firstname-input,
+      .secondname-input,
+      .village-input,
+      .mandal-input{
+        width: 90%;
+        height: 28px;
+        border-radius: 5px;
+        margin-top: 5px;
+        padding-left: 15px;
+      }
+      .last-name-container,
+      .mandal-container {
+       margin-left: -10px;
+    } 
+    .input-number {
+      width: 80%;
+      height: 28px;
+    }
+    .crop-input {
+      width: 90%;
+      height: 28px;
+    }
+   
+    .acres {
+      margin-left: -10px;
+    }
+    .crop-acres-main-container {
+      display: flex;
+      flex-direction: column;
+      
+     
+    }
+    .crop-main-container {
+      display: flex;
+      flex-direction: column;
+     
+    }
+    .acres-input {
+      width: 90%;
+      height: 28px;
+    }
+    .crop-acres-container-2 {
+      margin: 5px;
+    }
+    .date-input {
+      width: 320px;
+      height: 28px;
+     
+    }
+    .manure-crop-main-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+       padding: -10px;
+    }
+    .drip-input  {
+      width: 88%;
+      height: 28px;
+      
+    }
+    .manure-container {
+      margin-bottom: -10px;
+    }
+    .age-crop-container {
+      margin-left: -8px;
+      /* margin-top: 0; */
+      
+    }
+    .drip-input-container {
+      margin-left: -8px;
+     
+     
+   }
+   .agecrop-input {
+    width: 88%;
+   }
+   .spray-container-1 {
+    margin-left: 0;
+    
+  }
+  .spray-input{
+    height: 28px;
+    
+  }
+  .remarks-input {
+    width: 100%;
+  }
+  .spray-container{
+    display: flex;
+    flex-direction: column;
+  }
+  .file-input {
+    width: max-content;
+    height: min-content;
+  }
+  .spray-container-1 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+}
+  
+
+@media only screen and (max-width: 375px) {
+   .form-details {
+    margin-left: 20px;
+   }
+   .date-input {
+    width: max-content;
+   }
+   .spray-input {
+    width: auto;
+   }
+}
+
+@media only screen and (min-width: 768px) {
+   .main-container {
+    width: 90%;
+   }
+ 
+   .crop-input {
+    width: 180px;
+   }
+   .acres-input {
+    width: 60%;
+   }
+   
+  .drip-input-container {
+   margin-left: 20px;
+  }
+  .age-crop-container {
+    margin-left: 10px;
+  }
+}
+ 
+@media only screen and (max-width: 320px) {
+  .form-details {
+    margin: 30px;
+    padding: 20px;
+   }
+   
+   
+   .spray-input {
+    width: auto;
+   }
+   .file-input {
+    width: 100%;
+   }
+   .input-number {
+    width: auto;
+   }
+   .acres-input{
+    width: 40%;
+
+   }
+   .crop-input {
+    width: 120%;
+   }
+   .name-container {
+    display: flex;
+    flex-direction: column;
+   }
+   .place-container {
+    display: flex;
+    flex-direction: column;
+   }
+   .number-container {
+    margin-top: -40px;
+   }
+   .last-name-container,
+   .mandal-container {
+    margin: 0px;
+   }
+   .crop-input {
+    width: 100%;
+   }
+   .manure-container {
+    display: flex;
+    flex-direction: column;
+   }
+  
+   .crop-acres-container {
+    display: flex;
+    flex-direction: column;
+   }
+   .crop-acres-container-2 {
+    display: flex;
+    flex-direction: column;
+   }
+   .crop-condition-container {
+    display: flex;
+    flex-direction: column;
+   }
+   .acres {
+    margin-left: 2px;
+   }
+   .drip-input-container {
+        margin-left: 2px;
+        margin-top: 3px;
+   }
+   .age-crop-container {
+      margin-left: 2px;
+   }
+
+   
+} 
+  
+  
+    
+  
+   
+    
+    
