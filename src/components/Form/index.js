@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Axios from "axios";
+import { ToastContainer, toast } from 'react-custom-alert';
+import 'react-custom-alert/dist/index.css';
 import "./index.css";
 
 const Form = () => {
@@ -29,28 +31,44 @@ const Form = () => {
     files: "",
   });
 
+  // const getDetails = (e) => {
+
+  //   if (phoneNumber.length === 10) {
+  //     Axios.get("http://127.0.0.1:8000/api/get-user").then((response) => {
+  //       const fetchedData = response.data.getuser;
+  //       // eslint-disable-next-line
+  //       fetchedData.map((each) => {
+  //         if (parseInt(phoneNumber) === each.phoneNumber) {
+  //           setUser({
+  //             user,
+  //             ...each,
+  //           });
+  //         }
+  //       });
+  //     });
+  //   }
+  // };
+
+
   const getDetails = (e) => {
 
     if (phoneNumber.length === 10) {
-    //   e.target.blur();
-      // console.log(typeof(parseInt(phoneNumber)))
       Axios.get("http://127.0.0.1:8000/api/get-user").then((response) => {
-        console.log(response.getuser)
-        const fetchedData = response.getuser;
-        const updatedData = fetchedData.map((each) => ({
-          phoneNumber: each.number,
-          firstName: each.first_name,
-          lastName: each.last_name,
+        const fetchedData = response.data.getuser;
+        const newFetchedData = fetchedData.map((each) => ({
+          phoneNumber: each.phoneNumber,
+          firstName: each.firstName,
+          lastName: each.lastName,
           village: each.village,
           mandal: each.mandal,
-          cropVariety: each.crop_variety,
-          totalAcres: each.total_acres,
-          farmingIpm: each.farming_ipm,
-          farmingAcres: each.farming_acres,
-          semiOrganics: each.semi_organics,
-          semiAcres: each.semi_acres,
+          cropVariety: each.cropVariety,
+          totalAcres: each.totalAcres,
+          farmingIpm: each.farmingIpm,
+          farmingAcres: each.farmingAcres,
+          semiOrganics: each.semiOrganics,
+          semiAcres: each.semiAcres,
           organics: each.organics,
-          orgAcres: each.org_acres,
+          orgAcres: each.orgAcres,
           date: "",
           manureOrganic: "",
           drip: "",
@@ -62,9 +80,8 @@ const Form = () => {
           remarks: "",
           files: "",
         }));
-        console.log(updatedData);
         // eslint-disable-next-line
-        updatedData.map((each) => {
+        newFetchedData.map((each) => {
           if (parseInt(phoneNumber) === each.phoneNumber) {
             setUser({
               user,
@@ -73,11 +90,8 @@ const Form = () => {
           }
         });
       });
-      
     }
-    
   };
-  
 
   const [error, SetError] = useState(false);
 
@@ -107,7 +121,8 @@ const Form = () => {
       quantity.length === 0
     ) {
       SetError(true);
-    } else {
+    } 
+    else {
       const {
         phoneNumber,
         firstName,
@@ -133,7 +148,6 @@ const Form = () => {
         remarks,
         files,
       } = user;
-      // console.log(phoneNumber+firstName+lastName+village+mandal)
       Axios.post("http://127.0.0.1:8000/api/add-user", {
         phoneNumber: phoneNumber,
         firstName: firstName,
@@ -163,8 +177,10 @@ const Form = () => {
         (input) => (input.value = "")
       );
       // eslint-disable-next-line
-      window.location.reload(false);
-      alert("Data Submitted Successfullly");
+      setTimeout(function(){
+        window.location.reload();
+     }, 4000);
+      toast.success('Success');
     }
   };
 
@@ -194,10 +210,9 @@ const Form = () => {
 
   return (
     <div className="container">
-        <div className="img-container">
-            <img alt="logo" src="https://i.postimg.cc/pd5sLV8s/LOG-GREENINDIA1024-1-removebg-preview.png" className="image" />
-            
-        </div>
+      <div className="img-container">
+          <img alt="logo" src="https://i.postimg.cc/pd5sLV8s/LOG-GREENINDIA1024-1-removebg-preview.png" className="image" />
+      </div>
         
       <div className="main-container">
         <form className="form-details">
@@ -322,7 +337,7 @@ const Form = () => {
                       ? "acres-input focus red"
                       : "acres-input focus"
                   }
-                  type="text"
+                  type="number"
                   id="totalacres"
                   value={totalAcres}
                   onChange={(e) =>
@@ -359,7 +374,7 @@ const Form = () => {
                       ? "acres-input focus red"
                       : "acres-input focus"
                   }
-                  type="text"
+                  type="number"
                   id="acres1"
                   value={farmingAcres}
                   onChange={(e) =>
@@ -398,7 +413,7 @@ const Form = () => {
                       ? "acres-input focus red"
                       : "acres-input focus"
                   }
-                  type="text"
+                  type="number"
                   id="acres2"
                   value={semiAcres}
                   onChange={(e) =>
@@ -435,7 +450,7 @@ const Form = () => {
                       ? "acres-input focus red"
                       : "acres-input focus"
                   }
-                  type="text"
+                  type="number"
                   id="acres3"
                   value={orgAcres}
                   onChange={(e) =>
@@ -458,16 +473,18 @@ const Form = () => {
                   }
                 type="Date"
                 id="date"
-                value={date}
+                
                 onChange={(e) => setUser({ ...user, date: e.target.value })}
               />
             </div>
           </div>
 
-          <div className="manure-crop-main-container">
-            <div className="manure-container">
-              <div className="manure-input-container">
-                <label htmlFor="manure">Manure/Organic-Chemical :</label>
+         {/* below classnames same as crop main container */}
+
+<div className="crop-acres-main-container">
+            <div className="crop-acres-container">
+              <div className="input-field">
+                <label htmlFor="semiorganics">Manure/Organic-Chemical:</label>
                 <br />
                 <input
                    className={
@@ -482,8 +499,8 @@ const Form = () => {
                   }
                 />
               </div>
-              <div className="drip-input-container">
-                <label htmlFor="drip">Drip :</label>
+              <div className="acres">
+                <label htmlFor="acres2">Drip :</label>
                 <br />
                 <input
                     className={
@@ -498,9 +515,9 @@ const Form = () => {
               </div>
             </div>
 
-            <div className="crop-condition-container">
-              <div>
-                <label htmlFor="cropcondition">Crop Condition :</label>
+            <div className="crop-acres-container-2">
+              <div className="input-field">
+                <label htmlFor="organics">Crop Condition :</label>
                 <br />
                 <input
                   className={
@@ -515,14 +532,14 @@ const Form = () => {
                   }
                 />
               </div>
-              <div className="age-crop-container">
-                <label htmlFor="ageofcrop">Age of Crop :</label>
+              <div className="acres">
+                <label htmlFor="acres3">Age of Crop :</label>
                 <br />
                 <input
                   className={
                     error && ageOfCrop <= 0
-                      ? "acres-input focus red"
-                      : "acres-input focus"
+                      ? "acres-input-1 focus red"
+                      : "acres-input-1 focus"
                   }
                   type="text"
                   id="ageofcrop"
@@ -605,6 +622,7 @@ const Form = () => {
                 className="file-input"
                 type="file"
                 id="file"
+                multiple
                 onChange={(e) => setUser({ ...user, files: e.target.value })}
               />
             </div>
@@ -617,6 +635,7 @@ const Form = () => {
           </div>
         </form>
       </div>
+      <ToastContainer floatingTime={5000} />
     </div>
   );
 };
