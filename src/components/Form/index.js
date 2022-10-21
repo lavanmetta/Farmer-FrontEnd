@@ -31,25 +31,6 @@ const Form = () => {
     files: "",
   });
 
-  // const getDetails = (e) => {
-
-  //   if (phoneNumber.length === 10) {
-  //     Axios.get("http://127.0.0.1:8000/api/get-user").then((response) => {
-  //       const fetchedData = response.data.getuser;
-  //       // eslint-disable-next-line
-  //       fetchedData.map((each) => {
-  //         if (parseInt(phoneNumber) === each.phoneNumber) {
-  //           setUser({
-  //             user,
-  //             ...each,
-  //           });
-  //         }
-  //       });
-  //     });
-  //   }
-  // };
-
-
   const getDetails = (e) => {
 
     if (phoneNumber.length === 10) {
