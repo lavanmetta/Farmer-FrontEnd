@@ -34,7 +34,7 @@ const Form = () => {
   const getDetails = (e) => {
 
     if (phoneNumber.length === 10) {
-      Axios.get("http://127.0.0.1:8000/api/get-user").then((response) => {
+      Axios.get("http://127.0.0.1:8000/get-user").then((response) => {
         const fetchedData = response.data.getuser;
         const newFetchedData = fetchedData.map((each) => ({
           phoneNumber: each.phoneNumber,
@@ -129,7 +129,7 @@ const Form = () => {
         remarks,
         files,
       } = user;
-      Axios.post("http://127.0.0.1:8000/api/add-user", {
+      Axios.post("http://127.0.0.1:8000/add-user", {
         phoneNumber: phoneNumber,
         firstName: firstName,
         lastName: lastName,
