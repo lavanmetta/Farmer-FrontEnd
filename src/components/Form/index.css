@@ -314,11 +314,11 @@ label{
   display: none;
 }
 
-@media only screen and (max-width: 750px)  {
+@media only screen and (max-width: 600px)  {
     .main-container {
     padding: 20px;
     margin: 30px;
-    width: 90%;
+    width: 98%;
       }
       .image{
         width: 180px;
@@ -389,7 +389,7 @@ label{
     }
     .age-crop-container {
       margin-left: -8px;
-      /* margin-top: 0; */
+      argin-top: 0; 
       
     }
     .drip-input-container {
@@ -417,7 +417,7 @@ label{
   }
   .file-input {
     width: max-content;
-    height: min-content;
+    height: max-content;
   }
   .spray-container-1 {
     margin-top: 10px;
@@ -443,7 +443,7 @@ label{
 
 @media only screen and (min-width: 768px) {
    .main-container {
-    width: 65%;
+    width: 85%;
    }
  
    .crop-input {
@@ -475,7 +475,7 @@ label{
     width: auto;
    }
    .file-input {
-    width: 100%;
+    width: 20%;
    }
    .input-number {
     width: auto;
@@ -539,10 +539,18 @@ label{
   
 @media only screen and (max-width: 950px) {
   .main-container {
-    width: 80%;
+    width: 85%;
    }
 } 
   
+@media only screen and (min-width: 320px) {
+  .main-container {
+    width: 95%;
+   }
+} 
    
     
-    
+     
+
+
+     
